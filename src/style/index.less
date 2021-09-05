@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 360px;
+    height: 420px;
+    box-sizing: border-box;
+    background-color: #b7d4a8;
+    border-radius: 5%;
+    border: #000 10px solid;
+}
+
+#gameLimit {
+    border: solid 2px #000;
+    width: 304px;
+    height: 304px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    #snake {
+        #fragment{
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border: 1px solid #b7d4a8;
+        }
+    }
+}
+
+#gameResult {
+    position: relative;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 304px;
+    margin: 20px auto;
+    .level {
+        display: inline-block;
+        right: 0;
+        position: absolute;
+    }
+}

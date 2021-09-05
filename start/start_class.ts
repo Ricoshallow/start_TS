@@ -9,7 +9,7 @@
         sayName(){
             console.log(`my name is ${this.name}, and ${this.age} years old`);
         }
-        abstract hobbies()
+        abstract hobbies(): void
     }
     
     class Child extends Person{
@@ -25,7 +25,7 @@
     
     class Older extends Person{
         work: string
-        constructor(name, age, work){
+        constructor(name: string, age: number, work: string){
             super(name, age)
             this.work = work
         }

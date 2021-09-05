@@ -3,7 +3,7 @@ class Apple {
     // When a member is marked as private, it cannot be accessed outside the class in which it is declared
     // while The protected members are still accessible in the derived class
     private _shape: string
-    constructor(color, shape) {
+    constructor(color: string, shape: string) {
         this._color = color
         this._shape = shape
     }
