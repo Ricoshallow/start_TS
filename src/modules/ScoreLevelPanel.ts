@@ -23,6 +23,7 @@ class ScoreLevelPanel {
         }
         
     }
+    
 }
 
 export default ScoreLevelPanel
