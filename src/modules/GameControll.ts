@@ -10,6 +10,7 @@ class GameControll {
     direction: string = ''
     timer: any
     isAlive: boolean = true
+    lastDirection: string = ''
     constructor() {
         this.snake = new Snake()
         this.food = new Food()
@@ -17,14 +18,15 @@ class GameControll {
     }
     init() {
         document.addEventListener('keydown', this.keydownEvenetHandler.bind(this))
-
     }
     keydownEvenetHandler(e: KeyboardEvent) {
-        if(!this.isAlive){return}
+        if (!this.isAlive) { return }
         // console.log(e,this);
         this.direction = e.key
+        
         clearTimeout(this.timer)
         this.run()
+        
 
     }
     run() {
@@ -55,7 +57,7 @@ class GameControll {
                     this.run()
                 }, 300 - (this.scoreLevelPanel.level - 1) * 30)
             }
-        } catch (e:any) {
+        } catch (e: any) {
             alert(e.message)
             this.isAlive = false
         }
@@ -66,7 +68,7 @@ class GameControll {
             this.food.change()
             this.snake.addBody()
             console.log(this.snake.body);
-            
+
             this.scoreLevelPanel.addScore()
         }
     }

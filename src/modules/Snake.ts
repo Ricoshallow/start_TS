@@ -1,42 +1,46 @@
-class Snake{
+class Snake {
     head: HTMLElement
     body: HTMLCollection
     snakeBox: HTMLElement
-    constructor(){
+    constructor() {
         this.head = document.getElementById('head')!
         this.snakeBox = document.getElementById('snake')!
         this.body = this.snakeBox.getElementsByTagName('div')
     }
-    get X(){
+    get X() {
         return this.head.offsetLeft
     }
-    get Y(){
+    get Y() {
         return this.head.offsetTop
     }
-    set X(value){
-        if (value>=0 && value <= 290){
+    set X(value) {
+        if (this.X === value) { return }
+        if (value >= 0 && value <= 290) {
             this.head.style.left = value + 'px'
-        }else {
+
+        } else {
             throw new Error('your snake is run into the wall, GAME OVER! ')
         }
-        
+
     }
-    set Y(value){
-        if (value>=0 && value <= 290){
+    set Y(value) {
+        if (this.Y === value) { return }
+        if (value >= 0 && value <= 290) {
             this.head.style.top = value + 'px'
-        }else {
+
+        } else {
             throw new Error('your snake is run into the wall, GAME OVER! ')
         }
     }
-    addBody(){
+    addBody() {
         let newBody = document.createElement('div')
         this.snakeBox.appendChild(newBody)
     }
     //  start form head, make next div(body) move to the lcation where last div was.
-    move(){
+    move() {
         let lastX = this.X
         let lastY = this.Y
-        for (let i = 0;i<this.body.length;i++){
+        for (let i = 1; i < this.body.length; i++) {
             let curX = (this.body[i] as HTMLElement).offsetLeft;
             let curY = (this.body[i] as HTMLElement).offsetTop;
             (this.body[i] as HTMLElement).style.left = lastX + 'px';
